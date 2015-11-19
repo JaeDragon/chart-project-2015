@@ -1,0 +1,276 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official Homepage of Justin K Joe">
+    <meta name="author" content="Justin K Joe">
+    <meta name="pinterest" content="nopin" description="Sorry, pinning is not available on this page.">
+    <title>Project 3 | Justin K Joe</title>
+    <link href="css\bootstrap.min.css" rel="stylesheet">
+    <link href="css\font-awesome.min.css" rel="stylesheet">
+    <link href="css\lightbox.css" rel="stylesheet">
+    <link href="css\animate.min.css" rel="stylesheet">
+    <link href="css\main.css" rel="stylesheet">
+    <link href="css\responsive.css" rel="stylesheet">
+	<link href="css\chartjs-legend.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+	<!--Chart.js script-->
+	<script src="Chart.js"></script>
+    <script src="legend.js"></script>
+	<script src="demo-legend.js"></script>
+	<!--Highcharts scripts-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/modules/exporting.js"></script>
+	<script>
+	$(function () {
+    $('#highcharts').highcharts({
+        title: {
+            text: 'All-State Average SAT Scores',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: Texas Music Educators Association',
+            x: -20
+        },
+        xAxis: {
+            categories: ['2001', '2002', '2003', '2004', '2005', '2006',
+                '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+        },
+        yAxis: {
+            title: {
+                text: 'Overall Score'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Symphonic Band',
+            data: [1191,1135,1207,1206,1230,1255,1269,1814,1860,1891,1915,1806,1853,1906,1873]
+        }, {
+            name: 'Concert Band',
+            data: [1227,1176,1122,1185,1196,1170,1218,1811,1794,1861,1775,1801,1772,1771,1747]
+        }, {
+            name: 'Symphony Orchestra',
+            data: [1286,1293,1294,1317,1352,1285,1365,1952,1988,1984,2049,1984,2055,2049,2074]
+        }, {
+            name: 'Philharmonic Orchestra',
+            data: [1233,1275,1291,1274,1284,1293,1320,1933,1963,2027,2022,1921,2008,1980,2027]
+        }]
+    });
+});
+	</script>
+	<!--Google Chart script-->
+	<script type="text/javascript"
+      src="https://www.google.com/jsapi?autoload={
+        'modules':[{
+        'name':'visualization',
+        'version':'1',
+        'packages':['corechart']
+            }]
+          }">
+	</script>
+	<script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Symphonic Band', 'Symphony Orchestra'],
+          ['2001', 1191, 1286],
+          ['2002', 1135, 1293],
+          ['2003', 1207, 1294],
+          ['2004', 1206, 1317],
+		  ['2005', 1230, 1352],
+          ['2006', 1255, 1285],
+          ['2007', 1269, 1365],
+		  ['2008', 1814, 1952],
+          ['2009', 1860, 1988],
+          ['2010', 1891, 1984],
+		  ['2011', 1915, 2049],
+		  ['2012', 1806, 1984],
+		  ['2013', 1853, 2055],
+		  ['2014', 1906, 2049],
+		  ['2015', 1873, 2074],
+        ]);
+
+        var options = {
+          title: 'All-State Average SAT Scores | Top Ensembles',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('google-chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <!--/#header-->
+    <header id="header">
+      <div class="navbar navbar-inverse" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+            <h1><img src="images\logobanner-jkjoe.png" alt="logo"></h1>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-right navbar-nav">
+              <li class="active" id="Home">
+                <a href="index.html">Home</a>
+              </li>
+              <li class="active" id="About">
+                <a href="about.html">About</a>
+              </li>
+              <li id="Portfolio" class="active">
+                <a href="portfolio.html">Portfolio</a>
+              </li>
+              <li id="Contact" class="active">
+                <a href="contact-redirect-404.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="search">
+            <form role="form">
+              <i class="fa fa-search hidden-lg hidden-md hidden-sm hidden-xs"></i>
+              <div class="field-toggle">
+                <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+	<!--Content Heading-->
+      <div class="container">
+        <div class="row">
+          <div class="action">
+            <div class="col-sm-12">
+              <h1 class="title">A Study in Charts</h1>
+               <p>
+                <i>Exercise in Various Charting Tools</i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Content-->
+    <section id="charting" class="padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 padding-none">
+          <div style="width: 100%" class="div-responsive">
+            <canvas id="canvas" height="400" width="600" style="width: 800px; height: 400px;"></canvas>
+          </div>
+		  <div id="lineLegend"></div>
+		  <br>
+		  <script>
+		  var randomScalingFactor = function(){ return Math.round(Math.random()*400)};
+		  var lineChartData = {
+			labels : ["2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014"],
+			datasets : [
+				{
+					label: "Symphonic Band",
+					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : [1206,1230,1255,1269,1814,1860,1891,1915,1806,1853,1906]
+				},
+				{
+					label: "Symphony Orchestra",
+					fillColor : "rgba(151,187,205,0.2)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(151,187,205,1)",
+					data : [1317,1352,1285,1365,1952,1988,1984,2049,1984,2055,2049]
+				}
+			]
+
+		}
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myLine = new Chart(ctx).Line(lineChartData, {
+			responsive: true
+		});
+	
+	legend(document.getElementById("lineLegend"), data);
+
+    // testing adding twice (should get same result)
+    legend(document.getElementById("lineLegend"), data);	
+	}
+	      </script>	  
+          </div>
+          <div id="text" class="col-sm-7 padding-none">
+            <p class="text-justify">Within the music education world, nothing quite solidifies a budding artist's performance better than an All-State seat. It's an obsessive goal that opens many doors for future performance opportunities and talent development. It should also be known that these performers are usually very intellectually focused as well. </p>
+            <p class="text-justify">This series of charts examines the Texas All-State ensembles and their average performance on the SAT within the last fifteen (15) years. Each charting tool we have covered has been used, although for the sake of readability, not all ensembles are included in the charts prepared.</p>
+            <p class="text-justify">For these charts, I wanted very simple presentations. These are All-State performers, but this data is test scores, a very black-and-white issue. Line charts seemed to be the best method, and it illustrates the improvement of the scores over time. Charts.js and Highcharts seemed to be the best tools for this. Google's API and Fusion Tables were a little bothersome getting "straight to the point" with their setup. The first two also were more design-friendly. For "black-and-white" data, this aspect helped not make the charts entirely boring. I think the decision of which tool is based on whether or not the data can stand for itself as interesting.</p>
+			<p class="text-justify">The first chart shown is from Chart.js, which compares the top two ensembles for instrumental music, Symphonic Band and Symphonic Orchestra. Below, the rest show, in order, Highcharts, Google API and Fusion Tables. Their legends are listed beside them.</p>
+          </div>
+        </div>
+      </div>
+	  <!--Highcharts container-->
+	  <div id="highcharts" class="container" "div-responsive" style="min-width: 310px; height: 400px; margin: 0 auto">
+	  </div>
+	  <br>
+	  <!--Google Charts container-->
+	  <div id="google-chart" class="container" "div-responsive" style="width: 900px; height: 500px"></div>
+	  <!--Google Fusion Tables-->
+	  <div class="container">
+        <div class="row">
+          <div class="col-sm-12 padding-none" "div-responsive">
+		  <p align="center">
+		  <iframe width="700" height="400" scrolling="no" frameborder="no" src="https://www.google.com/fusiontables/embedviz?containerId=googft-gviz-canvas&amp;q=select+col0%2C+col1%2C+col3%2C+col6%2C+col7+from+1X2SczcitZD6qQE8XcGjlg8ppHo0ma0jSX8f24M9O+order+by+col0+asc&amp;viz=GVIZ&amp;t=AREA&amp;rmax=250&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_vAxes=%5B%7B%22title%22%3A%22Overall+Score%22%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_useFirstColumnAsDomain=true&amp;gco_isStacked=false&amp;gco_booleanRole=certainty&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22formatOptions%22%3A%7B%22scaleFactor%22%3Anull%7D%2C+%22title%22%3A%22Time%22%7D&amp;gco_legend=right&amp;gco_title=All-State+Average+SAT+Scores+%7C+Instrumental+Music&amp;width=700&amp;height=400"></iframe>
+		  </p>
+	      </div>
+		</div>
+	  </div>
+
+    </section>
+
+</body></html>
